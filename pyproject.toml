@@ -26,3 +26,7 @@ dependencies = [
 
 [project.scripts]
 kiro = "kiro_renderer.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest"]
+

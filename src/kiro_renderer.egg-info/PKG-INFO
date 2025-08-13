@@ -1,0 +1,68 @@
+Metadata-Version: 2.4
+Name: kiro-renderer
+Version: 0.1.0
+Summary: A Python renderer for the Kiro markup language.
+Author-email: Your Name <you@example.com>
+Project-URL: Homepage, https://github.com/myhappydays/kiro
+Project-URL: Bug Tracker, https://github.com/myhappydays/kiro/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: Pygments>=2.0
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Dynamic: license-file
+
+# Kiro Renderer
+
+This is the official Python renderer for the Kiro markup language.
+
+Kiro is a markup language designed for **meaningful writing**, maximizing **clarity of structure and style**.
+
+This package provides both a library and a command-line interface (CLI) to convert `.kiro` files into HTML.
+
+## Specification
+
+The full specification for Kiro can be found in [docs/kiro_2.0.md](./docs/kiro_2.0.md).
+
+## Installation
+
+(This package is not yet available on PyPI.)
+
+To install it locally for development:
+
+```bash
+pip install -e .
+```
+
+## Usage
+
+### As a Library
+
+```python
+from kiro_renderer import render
+
+kiro_text = """
+# Hello Kiro
+
+This is a paragraph.
+"""
+
+html_output = render(kiro_text)
+print(html_output)
+```
+
+### As a Command-Line Tool
+
+After installation, you can use the `kiro` command:
+
+```bash
+# Render a file and print to stdout
+kiro examples/welcome.kiro
+
+# Render a file and save to an output file
+kiro examples/welcome.kiro -o output.html
+```
